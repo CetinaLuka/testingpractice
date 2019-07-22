@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Testing practice</string>
+    <string name="settings_title">My Settings</string>
+    <string name="name_label">Your Name:</string>
+    <string name="name_hint">name...</string>
+    <string name="dob_label">Your date of birth:</string>
+    <string name="email_label">Your email address:</string>
+    <string name="email_hint">email@example.com</string>
+    <string name="save">SAVE</string>
+    <string name="revert">REVERT</string>
+</resources>
