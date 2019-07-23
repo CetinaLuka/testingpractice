@@ -65,7 +65,7 @@ public class SharedPreferencesHelperTest {
         //Save teh personal information to SharedPreferences
         boolean success = mMockBrokenSharedPreferencesHelper.savePersonalInfo(mSharedPreferenceEntry);
 
-        assertThat("Checking that SharedPreferenceEntry.save... returns true", success, is(true));
+        assertThat("Checking that SharedPreferenceEntry.save... returns true", success, is(true));//This is expected to break
 
         //Read personal information from SharedPreferences
         SharedPreferenceEntry savedSharedPreferenceEntry = mMockSharedPreferencesHelper.getPersonalInfo();
