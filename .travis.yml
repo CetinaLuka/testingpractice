@@ -39,16 +39,21 @@ before_script:
 script:
   - ./gradlew clean build
   - ./gradlew test
+
+before_deploy:
+  - export APP_VERSION=$(./gradlew :app:printVersionName)
+
 deploy:
   provider: releases
   api-key: $TravisToken
   file: $TRAVIS_BUILD_DIR/app/build/outputs/apk/debug/app-debug.apk
   skip_cleanup: true
-  name: dev-build
+  name: dev-build-$APP_VERSION
   body: Automatic build of $TRAVIS_BRANCH ($TRAVIS_COMMIT) built by Travis CI on $(date +'%F %T %Z').
   prerelease: true
   overwrite: true
   target_commitish: $TRAVIS_COMMIT
+  tag_name: "$APP_VERSION"
   on:
     branch: master
 
