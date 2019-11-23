@@ -46,7 +46,7 @@ before_deploy:
 deploy:
   - provider: releases
     api_key: "$TravisToken"
-    file: app/build/outputs/apk/release/*
+    file: app/build/outputs/apk/debug/app-debug.apk
     file_glob: true
     skip_cleanup: true
     overwrite: true
