@@ -14,6 +14,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import android.content.SharedPreferences;
 
+import com.matthewcannefax.testingpractice.SharedPreferenceEntry;
+
 import java.util.Calendar;
 
 

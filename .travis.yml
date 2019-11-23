@@ -14,6 +14,7 @@ android:
     - platform-tools
     - tools
     - extra-android-m2repository
+    
   licenses:
     - 'android-sdk-preview-license-52d11cd2'
     - 'android-sdk-license-.+'
@@ -33,12 +34,19 @@ before_install:
   - yes | sdkmanager "platforms;android-28"
   - yes | sdkmanager "build-tools;28.0.3"
 
+addons:
+  sonarcloud:
+    organization: "cetinaluka"
+    token:
+      secure: "NeaDlSh8gx+dMwFDGsPZLQ6JnIJ2R6iJ4k3HHildo6rvjx63Byf8/kb65fzS3ymRUnNQBLqT9DRGbbxjYbhkuO2Oss1EO89zyfsa4FGCYV3E7Emdi8n4ZH3/jMkP9QPENy1dder/WVaPobz49hFnuAL+1+jfbQDM5dgQ9xMnhAqJi++ex4nxZgQrIMVwx0x2NkYdHNpLHbd08vEfqvkkDzNQnPgXUJ53hZUfFdFiPAELgNRQbUZvs48j4z6pxmdy3+PCaPg6DParlH5/2g6UERlWPOC1rfxw3YmuozBZjwnGG5IATdOsn2nGSfgOqUOiwJc1XQmuCtXP3c0OX4y5eeI2VEU0TSJVp8/SZujQE3utJUk2yrZTNVAHsiy9DVaKxRgxw/AmNqCQcz3R5rQ/1ltyZp5rlGY0CLKC7Rl76BEYD3BBqY2ig+UwyhTJLUkJMCwKO0RxvcnyE7NH3I2DBS/z5yhId9MeoJjnVApPzfWdfUnrKbbthPQ1TUAQTRZP1J793X2dqS5GnXUAvKC42GTALPiBqotoKim7kVh8hvXlSncRfJu9MdH/v2Uv/qbkdnmM6gKzLuzZ9r52sVkr+VveGdfcOuMdmyjTne394Ra8Rcg5iZOEZVl8cTSPpQP3S68MuWJKV5Ozqmp8n6iwW2SKjJkxd6ivPicOYNiR6do=" # encrypted value of your token
+
 before_script:
   - chmod +x gradlew
 
 script:
-  - ./gradlew clean build
-  - ./gradlew test
+  - ./gradlew clean build test
+  - ./gradlew sonarqube
+
 
 deploy:
   provider: releases
