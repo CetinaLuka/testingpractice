@@ -82,10 +82,6 @@ public class MainActivity extends Activity {
             Log.i(TAG, "Personal information saved");
         } else {
             Log.e(TAG, "Failed to write personal information to SharedPreferences");
-            Log.e(TAG, "Failed to write personal information");
-            Log.e(TAG, "Failed to write personal information to SharedPreferences");
-            Log.e(TAG, "Failed to write personal information to SharedPreferences");
-            Log.e(TAG, "Failed to write personal information to SharedPreferences");
         }
     }
     /**

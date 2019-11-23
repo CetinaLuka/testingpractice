@@ -14,7 +14,6 @@ android:
     - platform-tools
     - tools
     - extra-android-m2repository
-    - sys-img-armeabi-v7a-android-$ANDROID_API_LEVEL
     
   licenses:
     - 'android-sdk-preview-license-52d11cd2'
