@@ -47,7 +47,6 @@ script:
   - ./gradlew clean build test
   - ./gradlew sonarqube
 
-
 deploy:
   provider: releases
   api-key: $TravisToken
